@@ -1,0 +1,7 @@
+FROM joshendriks/rpimatic1:0.0.1
+
+# Install pimatic modules
+RUN cd /home/pimatic-app && npm install pimatic-homeduino pimatic-mqtt
+
+# Expose port 80
+EXPOSE 80
