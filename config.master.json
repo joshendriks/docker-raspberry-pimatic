@@ -41,7 +41,7 @@
       "plugin": "ds18b20"
     },
     {
-      "plugin": "smartmeter"
+      "plugin": "smartmeter-gas"
     },
     {
       "plugin": "node-red",
