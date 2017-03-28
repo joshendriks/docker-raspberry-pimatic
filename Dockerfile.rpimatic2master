@@ -1,7 +1,7 @@
 FROM joshendriks/rpimatic2:0.0.1
 
 # Install pimatic modules
-RUN cd /home/pimatic-app && npm install pimatic-homeduino pimatic-mqtt pimatic-ds18b20 pimatic-node-red pimatic-smartmeter-gas pimatic-tplink-smartplug 
+RUN cd /home/pimatic-app && npm install mysql pimatic-homeduino pimatic-mqtt pimatic-ds18b20 pimatic-node-red pimatic-smartmeter-gas pimatic-tplink-smartplug 
 
 RUN cd /home/pimatic-app/node_modules/pimatic-node-red/node_modules/node-red && npm install node-red-node-mongodb node-red-node-pushbullet node-red-node-smooth node-red-contrib-elasticsearch3
 
@@ -22,3 +22,4 @@ RUN rm /home/pimatic-app/node_modules/pimatic/.js/startup.*
 # Run pimatic.js at start of the container
 ENTRYPOINT ["pimatic.js"]
 
+EXPOSE 80 8000

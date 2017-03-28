@@ -1,4 +1,4 @@
-FROM resin/raspberrypi2-node:4.3
+FROM resin/raspberrypi2-node:4.8
 
 # Install Pimatic Following the Instructions at Pimatic Docs
 # Ref: https://pimatic.org/guide/getting-started/installation/
