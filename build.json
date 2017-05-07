@@ -1,0 +1,33 @@
+{  
+   "maintainer":"joshendriks",
+   "images":[  
+      {  
+         "image":"raspberry-pi-pimatic",
+         "baseimage":"resin/raspberry-pi-node",
+         "tags":[  
+            "latest",
+			"4"
+         ]
+      },
+      {  
+         "image":"raspberry-pi2-pimatic",
+         "baseimage":"resin/raspberry-pi2-node",
+         "tags":[ 
+            "latest",
+            "7",
+            "6",
+			"4"
+         ]
+      },
+      {  
+         "image":"raspberry-pi3-pimatic",
+         "baseimage":"resin/raspberry-pi2-node",
+         "tags":[  
+            "latest",
+            "7",
+            "6",
+			"4"
+         ]
+      }
+   ]
+}
