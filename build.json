@@ -4,29 +4,31 @@
       {  
          "image":"raspberry-pi-pimatic",
          "baseimage":"resin/raspberry-pi-node",
-         "tags":[  
-            "latest",
-			"4"
+         "tags":[ 
+            {  
+              "source":"4",
+              "target":"1.0.0"
+			}
          ]
       },
       {  
          "image":"raspberry-pi2-pimatic",
-         "baseimage":"resin/raspberry-pi2-node",
+         "baseimage":"resin/raspberrypi2-node",
          "tags":[ 
-            "latest",
-            "7",
-            "6",
-			"4"
+            {  
+              "source":"4",
+              "target":"1.0.0"
+			}
          ]
       },
       {  
          "image":"raspberry-pi3-pimatic",
-         "baseimage":"resin/raspberry-pi2-node",
-         "tags":[  
-            "latest",
-            "7",
-            "6",
-			"4"
+         "baseimage":"resin/raspberrypi3-node",
+         "tags":[ 
+            {  
+              "source":"4",
+              "target":"1.0.0"
+			}
          ]
       }
    ]

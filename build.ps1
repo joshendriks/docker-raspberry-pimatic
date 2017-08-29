@@ -6,15 +6,14 @@ $config = (Get-Content $configfile) -join "`n" | ConvertFrom-Json
 foreach ($image in $config.images) {
 	$imagebasename = $image.image
 	foreach ($tag in $image.tags) {
-	   Write-Host "Writing Dockerfile.$imagebasename.$tag"
-	   (Get-Content $template).replace("{{baseimage}}", $image.baseimage).replace("{{tag}}", $tag) | Set-Content "Dockerfile.$imagebasename.$tag"
-	}
-
-	foreach ($tag in $image.tags) {
-	   $imagename = $image.image + ":" + $tag
+	   $target = $tag.target
+	   $source = $tag.source
+	   Write-Host "Writing Dockerfile.$imagebasename.$target"
+	   (Get-Content $template).replace("{{baseimage}}", $image.baseimage).replace("{{tag}}", $source) | Set-Content "Dockerfile.$imagebasename.$target"
+	   $imagename = $image.image + ":" + $target
 	   $maintainer = $config.maintainer
 	   Write-Host "Creating $maintainer/$imagename"
-	   docker build -t $maintainer/$imagename -f (Join-Path $PSScriptRoot "Dockerfile.$imagebasename.$tag") .
+	   docker build --no-cache -t $maintainer/$imagename -f (Join-Path $PSScriptRoot "Dockerfile.$imagebasename.$target") .
 	   docker push $maintainer/$imagename
 	}
 }
